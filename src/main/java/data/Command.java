@@ -1,5 +1,5 @@
 package data;
 
 public enum Command {
-    ADD, LIST, EXIT
+    ADD, LIST, EXIT, FILTER, UPDATE
 }

@@ -1,16 +1,8 @@
 package tables;
 
 import animals.Animal;
-import data.AnimalType;
-import data.Color;
-import animals.Factory;
-import data.db.IDBCConnector;
-import tables.AnimalTable;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AnimalTable extends AbsTable<Animal> {
 
@@ -18,14 +10,15 @@ public class AnimalTable extends AbsTable<Animal> {
         super("animals");
     }
 
-
     @Override
     protected boolean isTableExist() {
-        return false;
+        return super.isTableExist();
     }
 
     @Override
-    public void insert(String name, int age_int, float weight, Color color, String s) {
+    public void insert(String name, int age, float weight, String color, String type) {
+
+            create(name, age, weight, color, type);
 
     }
 }

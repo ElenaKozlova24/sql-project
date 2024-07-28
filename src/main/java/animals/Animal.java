@@ -4,6 +4,7 @@ import data.Color;
 
 public abstract class Animal {
 
+    private int id;
     private String name;
     private int age;
     private float weight;
@@ -81,12 +82,14 @@ public abstract class Animal {
     }
 
     public String toString() {
-        return "Привет! Меня зовут " + this.name + "! Мне " + getFormattedAge() +
+        return this.id + ": Привет! Меня зовут " + this.name + "! Мне " + getFormattedAge() +
                 ", я вешу " + this.weight + ", мой цвет " + color.getName() + ".";
     }
 
 
-    public abstract void setId(int id);
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public abstract Object getAge();
 

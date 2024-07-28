@@ -10,11 +10,6 @@ public class Cat extends Animal {
     }
 
     @Override
-    public void setId(int id) {
-
-    }
-
-    @Override
     public Object getAge() {
         return null;
     }

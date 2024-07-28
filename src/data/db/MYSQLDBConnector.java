@@ -43,13 +43,20 @@ public class MYSQLDBConnector implements IDBCConnector {
     }
 
     @Override
-    public boolean execute(String sql) throws SQLException {
-        statement.execute(sql);
-        return statement.execute(sql);
+    public boolean execute(String sql) {
+        try {
+            statement.execute(sql);
+            return statement.execute(sql);
+        } catch (SQLException e) {
+            System.out.println("ERROR SQL: " + e);
+            System.out.println("sql: " + sql);
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public ResultSet executeQuery(String sql) throws SQLException {
+        connect();
     return statement.executeQuery(sql);
 }
 

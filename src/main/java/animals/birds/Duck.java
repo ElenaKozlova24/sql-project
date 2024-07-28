@@ -18,11 +18,6 @@ public class Duck extends Animal implements animals.birds.Flying {
     }
 
     @Override
-    public void setId(int id) {
-
-    }
-
-    @Override
     public Object getAge() {
         return null;
     }
